@@ -4,10 +4,9 @@ using namespace std;
 
 
 /** WRITE DOWN YOUR INFORMATION HERE */
-string name = ""; // put your name here
-string ID = ""; // put your student id here
-int group_id = 0; // your Group Number here (1-8)
-
+string name = "Maftukh Ashfandi"; // put your name here
+string ID = "103012500260"; // put your student id here
+int group_id = 1; // your Group Number here (1-8)
 
 /** FUNCTIONS LIST, DO NOT MODIFY THESE */
 void insert_sort(int arr[], int &n, int x);
@@ -55,7 +54,14 @@ void insert_sort(int arr[], int &n, int x) {
 
     // YOUR CODES HERE
     //-----------------------
-
+    int i = n - 1;
+   
+    while (i >= 0 && arr[i] > x) {
+        arr[i + 1] = arr[i];
+        i--;
+    }
+    arr[i + 1] = x;
+    n++;
 
     //-----------------------
 }
@@ -150,10 +156,17 @@ string count_and_sum(int arr[], int n) {
 
     // YOUR CODES HERE
     //-----------------------
-
-
-    //-----------------------
-    return "";
+    int ganjil = 0;
+    int jumlah = 0;
+    for(int i=0; i<n; i++) {
+        if(arr[i] % 2 != 0) {
+            ganjil = ganjil + 1;
+        } else {
+            jumlah = jumlah + arr[i];
+        }
+    }
+    string hasil = "count odd = " + to_string(ganjil) + ", sum even = " + to_string(jumlah);
+    return hasil;
 }
 
 
